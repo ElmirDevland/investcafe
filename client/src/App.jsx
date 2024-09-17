@@ -19,12 +19,16 @@ function App() {
   const navLinksRef = useRef([]);
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const fetchUser = () => {
+      const userFromLocalStorage = localStorage.getItem('user');
+      if (userFromLocalStorage) {
+        const user = JSON.parse(userFromLocalStorage);
+        setUserName(user);
+        setIsLoggedIn(true);
+      }
+    };
 
-    if (user) {
-      setUserName(JSON.parse(localStorage.getItem('user')));
-      setIsLoggedIn(true);
-    }
+    fetchUser();
 
     const urlParams = new URLSearchParams(window.location.search);
     const tableNameFromUrl = urlParams.get('tableName');
@@ -35,9 +39,9 @@ function App() {
         JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
       );
       setIsLoggedIn(true);
-      // const url = new URL(window.location);
-      // url.searchParams.delete('tableName');
-      // window.history.replaceState({}, '', url.toString());
+      const url = new URL(window.location);
+      url.searchParams.delete('tableName');
+      window.history.replaceState({}, '', url.toString());
     }
 
     const handleScroll = () => {
@@ -45,11 +49,7 @@ function App() {
 
       const navigationMenu = document.querySelector('.navigation-menu');
       if (navigationMenu) {
-        if (window.scrollY > 50) {
-          navigationMenu.classList.add('scrolled');
-        } else {
-          navigationMenu.classList.remove('scrolled');
-        }
+        navigationMenu.classList.toggle('scrolled', window.scrollY > 50);
       }
 
       sectionsRef.current.forEach((section) => {
@@ -61,10 +61,10 @@ function App() {
       });
 
       navLinksRef.current.forEach((link) => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === current) {
-          link.classList.add('active');
-        }
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${current}`
+        );
       });
 
       setCurrentSection(current);
