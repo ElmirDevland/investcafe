@@ -1,5 +1,10 @@
 {
    "options": {
+      "temperature": {
+         "title": "Temperatur seçimi",
+         "room": "Otaq temperaturlu",
+         "cold": "Soyuq"
+      },
       "syrup": {
          "title": "Sirop seçimi",
          "none": "Siropsuz",
@@ -24,6 +29,10 @@
          "none": "Single",
          "double": "Double"
       }
+   },
+   "responseMessage": {
+      "ok": "Sifarişiniz uğurla tamamlandı. 🎉",
+      "error": "Ups, xəta baş verdi. 😔"
    },
    "cart": {
       "title": "Səbət",

@@ -17,6 +17,7 @@ export const ModalProvider = ({ children }) => {
       sugar: 'none',
       syrup: 'none',
       espresso: 'none',
+      temperature: 'room',
     },
   });
   const [openModal, setOpenModal] = useState(false);
@@ -37,6 +38,7 @@ export const ModalProvider = ({ children }) => {
         sugar: 'none',
         syrup: 'none',
         espresso: 'none',
+        temperature: 'room',
       },
     });
     setShowComments(false);
@@ -56,6 +58,13 @@ export const ModalProvider = ({ children }) => {
   };
 
   const optionsList = [
+    {
+      temperature: [
+        { label: t('options.temperature.room'), value: 'room' },
+        { label: t('options.temperature.cold'), value: 'cold' },
+      ],
+      title: t('options.temperature.title'),
+    },
     {
       espresso: [
         { label: t('options.espresso.none'), value: 'none' },

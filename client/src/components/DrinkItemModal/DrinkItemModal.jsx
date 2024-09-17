@@ -163,9 +163,7 @@ ${commentMessage}
       backgroundColor: statusError ? 'red' : 'rgb(0, 170, 0)',
       borderColor: statusError ? 'red' : 'rgb(0, 170, 0)',
     },
-    value: statusError
-      ? 'Ой, что-то пошло не так. 😔'
-      : 'Ваш заказ успешно оформлен. 🎉',
+    value: statusError ? t('responseMessage.error') : t('responseMessage.ok'),
   };
 
   const responseMessage =
