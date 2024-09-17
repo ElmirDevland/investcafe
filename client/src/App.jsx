@@ -34,7 +34,9 @@ function App() {
         'user',
         JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
       );
-      setUserName(JSON.parse(localStorage.getItem('user')));
+      const userName = JSON.parse(localStorage.getItem('user'));
+
+      setUserName(userName);
 
       setIsLoggedIn(true);
       const url = new URL(window.location);
