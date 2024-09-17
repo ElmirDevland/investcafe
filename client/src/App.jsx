@@ -83,14 +83,13 @@ function App() {
   }, []);
 
   const handleClick = (event) => {
-    const targetId = event.target.getAttribute('href')?.substring(1);
-    if (targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 30,
-        });
-      }
+    const targetId = event.target.getAttribute('href');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 30,
+      });
     }
   };
 
