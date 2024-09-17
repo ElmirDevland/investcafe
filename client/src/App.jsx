@@ -19,10 +19,11 @@ function App() {
   const navLinksRef = useRef([]);
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const userFromLocalStorage = localStorage.getItem('user');
 
-    if (user) {
-      setUserName(JSON.parse(localStorage.getItem('user')));
+    if (userFromLocalStorage) {
+      const user = JSON.parse(userFromLocalStorage);
+      setUserName(user);
       setIsLoggedIn(true);
     }
 
@@ -34,11 +35,11 @@ function App() {
         'user',
         JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
       );
-      const userName = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(localStorage.getItem('user'));
 
-      setUserName(userName);
-
+      setUserName(user);
       setIsLoggedIn(true);
+
       const url = new URL(window.location);
       url.searchParams.delete('tableName');
       window.history.replaceState({}, '', url.toString());
@@ -82,13 +83,15 @@ function App() {
   }, []);
 
   const handleClick = (event) => {
-    const targetId = event.target.getAttribute('href');
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 30,
-      });
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href')?.substring(1);
+    if (targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 30,
+        });
+      }
     }
   };
 
