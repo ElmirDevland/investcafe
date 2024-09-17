@@ -47,7 +47,6 @@ const DrinkItemModal = ({ username }) => {
   useEffect(() => {
     return () => {
       if (timerID) {
-        console.log('clear');
         clearTimeout(timerID);
       }
     };

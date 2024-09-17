@@ -83,7 +83,6 @@ function App() {
   }, []);
 
   const handleClick = (event) => {
-    event.preventDefault();
     const targetId = event.target.getAttribute('href')?.substring(1);
     if (targetId) {
       const targetElement = document.getElementById(targetId);
