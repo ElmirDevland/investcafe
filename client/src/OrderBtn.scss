@@ -1,0 +1,38 @@
+.order-button,
+.comment-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 54px;
+  width: 32%;
+  @media (max-width: 500px) {
+    height: 100%;
+    padding: 0;
+    font-size: 14px;
+  }
+  @media (min-width: 500px) and (max-width: 579px) {
+    width: 35%;
+    height: 100%;
+    padding: 0;
+    font-size: 14px;
+  }
+  @media (min-width: 579px) and (max-width: 767px) {
+    width: 37%;
+    height: 100%;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: #e65c00;
+    transform: scale(1.05);
+  }
+}

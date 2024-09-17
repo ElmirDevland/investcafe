@@ -1,0 +1,16 @@
+.comment__field {
+  label {
+    display: block;
+  }
+  .comment__input {
+    width: 156.79px;
+    height: 54px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    &:focus {
+      border-color: #8f8f8f;
+    }
+  }
+}

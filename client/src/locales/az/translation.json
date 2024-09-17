@@ -1,0 +1,209 @@
+{
+   "options": {
+      "syrup": {
+         "title": "Sirop seçimi",
+         "none": "Siropsuz",
+         "caramel": "Karamel",
+         "hazelnut": "Fındıq",
+         "vanilla": "Vanil",
+         "chocolate": "Şokolad"
+      },
+      "milk": {
+         "title": "Süd seçimi",
+         "none": "Südsüz",
+         "milk": "Südlü"
+      },
+      "sugar": {
+         "title": "Şəkər seçimi",
+         "none": "Şəkərsiz",
+         "medium_sugar": "Orta Şəkərli",
+         "sugar": "Çox Şəkərli"
+      },
+      "espresso": {
+         "title": "Shot seçimi",
+         "none": "Single",
+         "double": "Double"
+      }
+   },
+   "cart": {
+      "title": "Səbət",
+      "clear_btn": "Səbəti Təmizlə",
+      "order_btn": "Sifariş Et"
+   },
+   "header": {
+      "welcome": "Xoş gəldiniz"
+   },
+   "modal": {
+      "add_to_cart": "Səbətə Əlavə Et",
+      "add_comment": "Şərh Əlavə Et"
+   },
+   "hero": {
+      "title": "Bizimlə ən yaxşı içkilərdən zövq alın!",
+      "subtitle": "Sevimli içkinizi seçin və indi sifariş edin"
+   },
+   "about": {
+      "title": "Haqqımızda",
+      "info": "Biz yalnız sevgi və keyfiyyətə diqqət ilə hazırlanmış ən yaxşı içkiləri təqdim edirik."
+   },
+   "products": {
+      "coffee": "Qəhvə",
+      "ice_coffee": "Soyuq qəhvə",
+      "tea": "Çay",
+      "ice_tea": "Soyuq çay",
+      "cold_drinks": "Sərin içkilər",
+      "lemonades": "Limonadlar",
+      "fruit_juices": "Meyvə şirələri",
+      "water": "Su"
+   },
+   "coffee_descriptions": {
+      "americano": {
+         "name": "Americano",
+         "description": "İnvestisiya strategiyalarımız kimi güclü və canlandırıcıdır. Firmamızla uğurun əsl dadını kəşf edin."
+      },
+      "cappuccino": {
+         "name": "Cappuccino",
+         "description": "İntensiv və balanslı, risk və gəlir strategiyalarımız kimi. İnvestisiyalarınızı bizimlə optimallaşdırın."
+      },
+      "latte": {
+         "name": "Latte",
+         "description": "Zərif və ipək kimi, hər investisiyada rahatlıq və inam. Şirkətimizlə sabitliyə üstünlük verin."
+      },
+      "espresso": {
+         "name": "Espresso",
+         "description": "Qısa və güclü, investisiya qərarlarımız kimi. Maliyyə uğurunuzu bizim köməyimizlə sürətləndirin."
+      },
+      "turkish_coffee": {
+         "name": "Türk qəhvəsi",
+         "description": "Ənənəvi və bənzərsiz, fərdiləşdirilmiş investisiya yanaşmalarımız kimi. Şirkətimizlə yeni üfüqlər kəşf edin."
+      }
+   },
+   "icecoffee_descriptions": {
+      "ice_americano": {
+         "name": "Ice Americano",
+         "description": "Təravətləndirici və şəffaf, bizim xidmətlərimiz kimi. İnvestisiya həllərimizlə yeni fürsətlərə hazır olun."
+      },
+      "ice_sparkling_americano": {
+         "name": "Qazlı Ice Americano",
+         "description": "Qazlı Ice Americano-nun parlaq enerjisi və canlandırıcı təsiri bizim iş yanaşmamızı simvolizə edir – yeni baxış və dinamik həllər ilə hədəflərinizə çatmaq."
+      },
+      "ice_latte": {
+         "name": "Ice Latte",
+         "description": "Hamar və zəngin, müştəri xidmətimiz kimi. Komandamızla rahatlıq və peşəkarlığın dadını çıxarın."
+      },
+      "ice_mocha": {
+         "name": "Ice Mocha",
+         "description": "Ice Mocha-nın kompleks və zərif dadından həzz alın, bu bizim hər bir müştəriyə yanaşmamızı əks etdirir – dərindən, detallara diqqətlə və maksimum rahatlıqla."
+      }
+   },
+   "tea_descriptions": {
+      "black_tea": {
+         "name": "Qara çay",
+         "description": "Klassik və etibarlı, bazardakı reputasiyamız kimi. Maddi rifahınız etibarlı əllərdədir."
+      },
+      "green_tea": {
+         "name": "Yaşıl çay",
+         "description": "Təravətləndirici və qayğıkeş, aktivlərin idarə edilməsinə yanaşmamız kimi. Birlikdə biz yeni zirvələrə çatırıq."
+      },
+      "jasmine_tea": {
+         "name": "Jasmin çayı",
+         "description": "Fərdi maliyyə həllərimiz kimi incə və mürəkkəbdir. İnvestisiyalarınızı peşəkarlara həvalə edin."
+      },
+      "citrus_tea": {
+         "name": "Sitrus çayı",
+         "description": "Yenilikçi ideyalarımız kimi təravətləndirici və ruhlandırıcı. Şirkətimizlə parlaq maliyyə gələcəyinə hazırlaşın."
+      }
+   },
+   "icetea_descriptions": {
+      "description": "Təravətləndirici və ləzzətli, bizim müxtəlifləşdirilmiş investisiya portfellərimiz kimi. Bizimlə müxtəlif imkanların dadını çıxarın.",
+      "mango_ice_tea": {
+         "name": "Mango Ice Tea"
+      },
+      "peach_ice_tea": {
+         "name": "Şaftalı Ice Tea"
+      },
+      "lemon_ice_tea": {
+         "name": "Limon Ice Tea"
+      },
+      "lime_ice_tea": {
+         "name": "Laym Ice Tea"
+      },
+      "berry_ice_tea": {
+         "name": "Meşə Meyvəli Ice Tea"
+      },
+      "strawberry_ice_tea": {
+         "name": "Çiyələk Ice Tea"
+      },
+      "raspberry_ice_tea": {
+         "name": "Moruq Ice Tea"
+      }
+   },
+   "lemonade_descriptions": {
+      "description": "Təzə və maraqlı, bizim maliyyə məsləhətlərimiz kimi. Gəlin birlikdə uğurunuz üçün təravətləndirici strategiyalar yaradaq.",
+      "lemon": {
+         "name": "Limon"
+      },
+      "lime": {
+         "name": "Laym"
+      },
+      "mango": {
+         "name": "Mango"
+      },
+      "pear": {
+         "name": "Armud"
+      },
+      "berry": {
+         "name": "Meşə Meyvəli"
+      },
+      "strawberry": {
+         "name": "Çiyələk"
+      },
+      "raspberry": {
+         "name": "Moruq"
+      },
+      "passion_fruit": {
+         "name": "Marakuyya"
+      }
+   },
+   "fruitjuices_descriptions": {
+      "orange_juice": {
+         "name": "Portağal Şirəsi"
+      },
+      "apple_juice": {
+         "name": "Alma Şirəsi"
+      },
+      "cherry_juice": {
+         "name": "Albalı Şirəsi"
+      },
+      "peach_juice": {
+         "name": "Şaftalı Şirəsi"
+      },
+      "multifruit_juice": {
+         "name": "Multimeyvə"
+      }
+   },
+   "cold_descriptions": {
+      "coca_cola_classic": {
+         "name": "Coca-cola Classic"
+      },
+      "coca_cola_zero": {
+         "name": "Coca-cola Zero"
+      },
+      "fanta": {
+         "name": "Fanta"
+      },
+      "sprite": {
+         "name": "Sprite"
+      }
+   },
+   "water_descriptions": {
+      "sparklingsirab": {
+         "name": "Sirab Sparkling"
+      },
+      "stillsirab": {
+         "name": "Sirab Still"
+      },
+      "sarikiz": {
+         "name": "Sarıkız"
+      }
+   }
+}

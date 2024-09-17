@@ -1,0 +1,182 @@
+{
+   "options": {
+      "syrup": {
+         "title": "Syrup selection",
+         "none": "Without Syrup",
+         "caramel": "Caramel",
+         "hazelnut": "Hazelnut",
+         "vanilla": "Vanilla",
+         "chocolate": "Chocolate"
+      },
+      "milk": {
+         "title": "Milk selection",
+         "none": "Without Milk",
+         "milk": "With Milk"
+      },
+      "sugar": {
+         "title": "Sugar selection",
+         "none": "No Sugar",
+         "medium_sugar": "Medium Sugar",
+         "sugar": "Much Sugar"
+      },
+      "espresso": {
+         "title": "Shot selection"
+      }
+   },
+   "cart": {
+      "title": "Cart",
+      "clear_btn": "Clear Cart",
+      "order_btn": "Order"
+   },
+   "header": {
+      "welcome": "Welcome"
+   },
+   "modal": {
+      "add_to_cart": "Add to Cart",
+      "add_comment": "Add Comment"
+   },
+   "hero": {
+      "title": "Enjoy the finest drinks with us!",
+      "subtitle": "Choose your favorite drink and order now"
+   },
+   "about": {
+      "title": "About Us",
+      "info": "We offer only the finest beverages, crafted with love and attention to quality."
+   },
+   "products": {
+      "coffee": "Coffee",
+      "ice_coffee": "Iced Coffee",
+      "tea": "Tea",
+      "ice_tea": "Iced Tea",
+      "cold_drinks": "Cold Drinks",
+      "lemonades": "Lemonades",
+      "fruit_juices": "Fruit Juices",
+      "water": "Water"
+   },
+   "coffee_descriptions": {
+      "americano": {
+         "name": "Americano",
+         "description": "Strong and invigorating, like our investment strategies. Discover the true taste of success with our company."
+      },
+      "cappuccino": {
+         "name": "Cappuccino",
+         "description": "Intense and balanced, like our risk and return strategies. Optimize your investments with us."
+      },
+      "latte": {
+         "name": "Latte",
+         "description": "Smooth and velvety, like the comfort and confidence in every investment. Choose stability with our company."
+      },
+      "espresso": {
+         "name": "Espresso",
+         "description": "Brief and powerful, like our investment decisions. Accelerate your financial success with our help."
+      },
+      "turkish_coffee": {
+         "name": "Turkish coffee",
+         "description": "Traditional and unique, like our personalized investment approaches. Discover new horizons with our company."
+      }
+   },
+   "icecoffee_descriptions": {
+      "ice_americano": {
+         "name": "Ice Americano",
+         "description": "Refreshing and clear, like our services. Prepare for new opportunities with our investment solutions."
+      },
+      "ice_sparkling_americano": {
+         "name": "Sparkling Ice Americano",
+         "description": "The sparkling energy and invigorating effect of Sparkling Ice Americano symbolize our approach to work — fresh perspectives and dynamic solutions to achieve your goals."
+      },
+      "ice_latte": {
+         "name": "Ice Latte",
+         "description": "Smooth and rich, like our customer service. Enjoy the comfort and professionalism of our team."
+      },
+      "ice_mocha": {
+         "name": "Ice Mocha",
+         "description": "Enjoy the complex and refined flavor of Ice Mocha, reflecting our approach to each client — deeply, with attention to detail and maximum comfort."
+      }
+   },
+   "tea_descriptions": {
+      "black_tea": {
+         "name": "Black Tea",
+         "description": "Classic and reliable, like our market reputation. Your financial well-being is in safe hands."
+      },
+      "green_tea": {
+         "name": "Green Tea",
+         "description": "Refreshing and caring, like our approach to asset management. Together, we reach new heights."
+      },
+      "jasmine_tea": {
+         "name": "Jasmine Tea",
+         "description": "Exquisite and sophisticated, like our personalized financial solutions. Trust your investments to the professionals."
+      },
+      "citrus_tea": {
+         "name": "Citrus Tea",
+         "description": "Refreshing and inspiring, like our innovative ideas. Prepare for a bright financial future with our company."
+      }
+   },
+   "icetea_descriptions": {
+      "description": "Refreshing and delicious, like our diversified investment portfolios. Enjoy a variety of opportunities with us.",
+      "mango_ice_tea": {
+         "name": "Mango Ice Tea"
+      },
+      "peach_ice_tea": {
+         "name": "Peach Ice Tea"
+      },
+      "lemon_ice_tea": {
+         "name": "Lemon Ice Tea"
+      },
+      "lime_ice_tea": {
+         "name": "Lime Ice Tea"
+      },
+      "berry_ice_tea": {
+         "name": "Berry Ice Tea"
+      },
+      "strawberry_ice_tea": {
+         "name": "Strawberry Ice Tea"
+      },
+      "raspberry_ice_tea": {
+         "name": "Raspberry Ice Tea"
+      }
+   },
+   "lemonade_descriptions": {
+      "description": "Fresh and engaging, like our financial consultations. Let’s create refreshing strategies for your success together.",
+      "lemon": {
+         "name": "Lemon"
+      },
+      "lime": {
+         "name": "Lime"
+      },
+      "mango": {
+         "name": "Mango"
+      },
+      "pear": {
+         "name": "Pear"
+      },
+      "berry": {
+         "name": "Berry"
+      },
+      "strawberry": {
+         "name": "Strawberry"
+      },
+      "raspberry": {
+         "name": "Raspberry"
+      },
+      "passion_fruit": {
+         "name": "Passion Fruit"
+      }
+   },
+   "fruitjuices_descriptions": {
+      "orange_juice": {
+         "name": "Orange Juice"
+      },
+      "apple_juice": {
+         "name": "Apple Juice"
+      },
+      "cherry_juice": {
+         "name": "Cherry Juice"
+      },
+      "peach_juice": {
+         "name": "Peach Juice"
+      },
+      "multifruit_juice": {
+         "name": "Multifruit Juice"
+      }
+   }
+}

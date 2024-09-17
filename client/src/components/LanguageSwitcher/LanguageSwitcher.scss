@@ -1,0 +1,52 @@
+.language-selector {
+  position: relative;
+
+  &:hover .language-dropdown {
+    display: block;
+  }
+
+  .language-button {
+    @media (max-width: 445px) {
+      font-size: 12px;
+      padding: 8px 8px;
+    }
+    padding: 8px 16px;
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    &:hover {
+      background: #002244;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  }
+
+  .language-dropdown {
+    display: none;
+    position: absolute;
+    top: 102%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+
+    button {
+      display: block;
+      padding: 10px;
+      color: #003366;
+      text-decoration: none;
+      width: 100%;
+
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+  }
+}

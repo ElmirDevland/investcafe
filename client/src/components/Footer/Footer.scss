@@ -1,0 +1,63 @@
+footer {
+  background: #003366;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 18px;
+}
+.decoration {
+  height: 180px;
+  background: repeating-linear-gradient(
+    to right,
+    rgb(255, 60, 0) 0,
+    rgb(255, 60, 0) 20px,
+    red 20px,
+    red 40px,
+    black 40px,
+    black 60px,
+    rgb(255, 215, 0) 60px,
+    rgb(255, 215, 0) 80px,
+    blue 80px,
+    blue 100px,
+    rgb(0, 162, 255) 100px,
+    rgb(0, 162, 255) 120px,
+    rgb(255, 215, 0) 120px,
+    rgb(255, 215, 0) 140px,
+    red 140px,
+    red 160px,
+    rgb(255, 60, 0) 160px,
+    rgb(255, 60, 0) 180px,
+    black 180px,
+    black 220px,
+    blue 220px,
+    blue 240px,
+    rgb(255, 215, 0) 240px,
+    rgb(255, 215, 0) 280px,
+    black 280px,
+    black 300px,
+    rgb(0, 162, 255) 300px,
+    rgb(0, 162, 255) 340px,
+    rgb(255, 215, 0) 340px,
+    rgb(255, 215, 0) 360px,
+    blue 360px,
+    blue 380px,
+    black 380px,
+    black 400px,
+    rgb(255, 215, 0) 400px,
+    rgb(255, 215, 0) 420px,
+    rgb(255, 60, 0) 420px,
+    rgb(255, 60, 0) 440px,
+    red 440px,
+    red 460px,
+    black 460px,
+    black 480px,
+    rgb(255, 215, 55) 480px,
+    rgb(255, 215, 55) 500px,
+    blue 500px,
+    blue 520px,
+    rgb(0, 162, 255) 520px,
+    rgb(0, 162, 255) 540px,
+    rgb(255, 215, 0) 540px,
+    rgb(255, 215, 0) 560px
+  );
+}
