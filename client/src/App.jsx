@@ -19,16 +19,12 @@ function App() {
   const navLinksRef = useRef([]);
 
   useEffect(() => {
-    const fetchUser = () => {
-      const userFromLocalStorage = localStorage.getItem('user');
-      if (userFromLocalStorage) {
-        const user = JSON.parse(userFromLocalStorage);
-        setUserName(user);
-        setIsLoggedIn(true);
-      }
-    };
+    const user = localStorage.getItem('user');
 
-    fetchUser();
+    if (user) {
+      setUserName(JSON.parse(localStorage.getItem('user')));
+      setIsLoggedIn(true);
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     const tableNameFromUrl = urlParams.get('tableName');
@@ -38,6 +34,8 @@ function App() {
         'user',
         JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
       );
+      setUserName(JSON.parse(localStorage.getItem('user')));
+
       setIsLoggedIn(true);
       const url = new URL(window.location);
       url.searchParams.delete('tableName');
@@ -49,7 +47,11 @@ function App() {
 
       const navigationMenu = document.querySelector('.navigation-menu');
       if (navigationMenu) {
-        navigationMenu.classList.toggle('scrolled', window.scrollY > 50);
+        if (window.scrollY > 50) {
+          navigationMenu.classList.add('scrolled');
+        } else {
+          navigationMenu.classList.remove('scrolled');
+        }
       }
 
       sectionsRef.current.forEach((section) => {
@@ -61,10 +63,10 @@ function App() {
       });
 
       navLinksRef.current.forEach((link) => {
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === `#${current}`
-        );
+        link.classList.remove('active');
+        if (link.getAttribute('href') === current) {
+          link.classList.add('active');
+        }
       });
 
       setCurrentSection(current);
