@@ -34,10 +34,10 @@ function App() {
         'user',
         JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
       );
-      const url = new URL(window.location);
-      url.searchParams.delete('tableName');
-      window.history.replaceState({}, '', url.toString());
       setIsLoggedIn(true);
+      // const url = new URL(window.location);
+      // url.searchParams.delete('tableName');
+      // window.history.replaceState({}, '', url.toString());
     }
 
     const handleScroll = () => {
