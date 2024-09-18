@@ -6,11 +6,29 @@ const LoginForm = ({ onLogin }) => {
   const [lastName, setLastName] = useState('');
   const [error, setError] = useState('');
 
+  const validateName = (name) => {
+    const hasDigits = /\d/.test(name);
+    const hasMinimumLetters = name.replace(/[^a-zA-Z]/g, '').length >= 3;
+
+    if (hasDigits) {
+      return 'Имя не должно содержать цифры.';
+    }
+
+    if (!hasMinimumLetters) {
+      return 'Минимум 3 буквы требуется.';
+    }
+
+    return '';
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!firstName || !lastName) {
-      setError('Please fill in all fields');
+    const firstNameError = validateName(firstName);
+    const lastNameError = validateName(lastName);
+
+    if (firstNameError || lastNameError) {
+      setError(firstNameError || lastNameError);
       return;
     }
 
