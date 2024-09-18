@@ -4,8 +4,9 @@
       "message": "Davam etmək üçün, lütfən, aşağıdaki məlumatları doldurun.",
       "hasDigits": "Adda rəqəmlər olmamalıdır.",
       "minLetters": "Ad ən azı 3 hərfdən ibarət olmalıdır.",
-      "fistName": "Ad",
-      "lastName": "Soyad"
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "enter": "Daxil ol"
    },
    "options": {
       "temperature": {

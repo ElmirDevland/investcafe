@@ -5,7 +5,8 @@
       "hasDigits": "Имя не должно содержать цифры.",
       "minLetters": "Имя должно состоять как минимум из 3 букв.",
       "firstName": "Имя",
-      "lastName": "Фамилия"
+      "lastName": "Фамилия",
+      "enter": "Войти"
    },
    "options": {
       "temperature": {

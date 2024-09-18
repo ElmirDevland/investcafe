@@ -5,7 +5,8 @@
       "hasDigits": "There should be no digits in the name.",
       "minLetters": "The name must consist of at least 3 letters.",
       "firstName": "First Name",
-      "lastName": "Last Name"
+      "lastName": "Last Name",
+      "enter": "Log In"
    },
    "options": {
       "temperature": {

@@ -19,7 +19,12 @@ const LoginForm = ({ onLogin }) => {
     }
 
     if (!hasMinimumLetters) {
-      return t('hasDigits.minLetters');
+      return t('loginPage.minLetters');
+    }
+
+    if (!firstName || !lastName) {
+      setError('Please fill in all fields');
+      return;
     }
 
     return '';
@@ -53,7 +58,7 @@ const LoginForm = ({ onLogin }) => {
           {error && <p className="error-message">{error}</p>}
           <div className="form-group">
             <label htmlFor="first-name" className="form-label">
-              {t('loginPage.fistName')}
+              {t('loginPage.firstName')}
             </label>
             <input
               type="text"
@@ -78,7 +83,7 @@ const LoginForm = ({ onLogin }) => {
             />
           </div>
           <button type="submit" className="submit-button">
-            Submit
+            {t('loginPage.enter')}
           </button>
         </form>
       </div>
