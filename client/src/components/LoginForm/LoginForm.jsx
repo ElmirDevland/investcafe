@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import './LoginForm.scss';
 
 const LoginForm = ({ onLogin }) => {
+  const { t } = useTranslation();
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [error, setError] = useState('');
@@ -11,11 +15,11 @@ const LoginForm = ({ onLogin }) => {
     const hasMinimumLetters = name.replace(/[^a-zA-Z]/g, '').length >= 3;
 
     if (hasDigits) {
-      return 'Имя не должно содержать цифры.';
+      return t('loginPage.hasDigits');
     }
 
     if (!hasMinimumLetters) {
-      return 'Минимум 3 буквы требуется.';
+      return t('hasDigits.minLetters');
     }
 
     return '';
@@ -41,15 +45,15 @@ const LoginForm = ({ onLogin }) => {
   return (
     <div className="login-page">
       <div className="welcome-text">
-        <h1>InvestCafe-yə xoş gəlmisiniz.</h1>
-        <p>Davam etmək üçün, lütfən, aşağıdaki məlumatları doldurun.</p>
+        <h1>{t('loginPage.welcome')}</h1>
+        <p>{t('loginPage.message')}</p>
       </div>
       <div className="login-form-container">
         <form className="login-form" onSubmit={handleSubmit}>
           {error && <p className="error-message">{error}</p>}
           <div className="form-group">
             <label htmlFor="first-name" className="form-label">
-              First Name
+              {t('loginPage.fistName')}
             </label>
             <input
               type="text"
@@ -62,7 +66,7 @@ const LoginForm = ({ onLogin }) => {
           </div>
           <div className="form-group">
             <label htmlFor="last-name" className="form-label">
-              Last Name
+              {t('loginPage.lastName')}
             </label>
             <input
               type="text"
