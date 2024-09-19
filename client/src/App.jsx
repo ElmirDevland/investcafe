@@ -69,6 +69,17 @@ function App() {
         link.classList.remove('active');
         if (link.getAttribute('href') === current) {
           link.classList.add('active');
+
+          const linkPosition =
+            link.getBoundingClientRect().left + window.scrollX;
+          const menuPosition =
+            navigationMenu.getBoundingClientRect().left + window.scrollX;
+          const offset = linkPosition - menuPosition;
+
+          navigationMenu.scrollTo({
+            left: offset,
+            behavior: 'smooth',
+          });
         }
       });
 

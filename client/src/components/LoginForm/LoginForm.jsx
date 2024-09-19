@@ -22,11 +22,6 @@ const LoginForm = ({ onLogin }) => {
       return t('loginPage.minLetters');
     }
 
-    if (!firstName || !lastName) {
-      setError('Please fill in all fields');
-      return;
-    }
-
     return '';
   };
 
