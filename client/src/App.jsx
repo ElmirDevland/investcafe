@@ -78,7 +78,6 @@ function App() {
 
           navigationMenu.scrollTo({
             left: offset,
-            behavior: 'smooth',
           });
         }
       });
