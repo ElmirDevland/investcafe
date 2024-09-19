@@ -45,7 +45,16 @@ function App() {
       window.history.replaceState({}, '', url.toString());
     }
 
-    const handleScroll = () => {
+    const debounce = (func, wait) => {
+      let timeout;
+      return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+      };
+    };
+
+    const handleScroll = debounce(() => {
       let current = '';
 
       const navigationMenu = document.querySelector('.navigation-menu');
@@ -57,33 +66,38 @@ function App() {
         }
       }
 
+      let newActiveLink = null;
+
       sectionsRef.current.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         if (window.pageYOffset >= sectionTop - sectionHeight / 3 - 100) {
           current = section.id;
+          newActiveLink = document.querySelector(`a[href="#${current}"]`);
         }
       });
 
       navLinksRef.current.forEach((link) => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === current) {
-          link.classList.add('active');
-
-          const linkPosition =
-            link.getBoundingClientRect().left + window.scrollX;
-          const menuPosition =
-            navigationMenu.getBoundingClientRect().left + window.scrollX;
-          const offset = linkPosition - menuPosition;
-
-          navigationMenu.scrollTo({
-            left: offset,
-          });
-        }
       });
 
+      if (newActiveLink) {
+        newActiveLink.classList.add('active');
+
+        const linkPosition =
+          newActiveLink.getBoundingClientRect().left + window.scrollX;
+        const menuPosition =
+          navigationMenu.getBoundingClientRect().left + window.scrollX;
+        const offset = linkPosition - menuPosition;
+
+        navigationMenu.scrollTo({
+          left: offset,
+          behavior: 'smooth',
+        });
+      }
+
       setCurrentSection(current);
-    };
+    }, 100);
 
     window.addEventListener('scroll', handleScroll);
 
