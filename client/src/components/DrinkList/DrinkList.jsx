@@ -4,12 +4,7 @@ import DrinkItem from '../DrinkItem/DrinkItem';
 import { useContext } from 'react';
 import { DrinksContext } from '../../context/DrinksContext';
 
-const DrinkList = ({
-  sectionsRef,
-  navLinksRef,
-  currentSection,
-  handleClick,
-}) => {
+const DrinkList = ({ sectionsRef, navLinksRef, handleClick }) => {
   const { drinks } = useContext(DrinksContext);
 
   return (
@@ -24,7 +19,6 @@ const DrinkList = ({
                     href={obj.id}
                     ref={(el) => (navLinksRef.current[i] = el)}
                     onClick={handleClick}
-                    className={currentSection === obj.id ? `active-nav` : ''}
                   >
                     {obj.category}
                   </a>

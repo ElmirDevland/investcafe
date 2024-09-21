@@ -11,7 +11,7 @@
    "options": {
       "temperature": {
          "title": "Temperature selection",
-         "room": "Room temperature",
+         "room": "Room",
          "cold": "Cold"
       },
       "syrup": {

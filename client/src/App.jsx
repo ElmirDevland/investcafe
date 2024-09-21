@@ -85,20 +85,34 @@ function App() {
       setCurrentSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const debouncedHandleScroll = () => {
+      let timeoutId;
+      return () => {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(handleScroll, 25);
+      };
+    };
+
+    const handleScrollDebounced = debouncedHandleScroll();
+
+    window.addEventListener('scroll', handleScrollDebounced);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollDebounced);
     };
-  }, []);
+  }, [currentSection]);
 
   const handleClick = (event) => {
+    event.preventDefault();
     const targetId = event.target.getAttribute('href');
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
       window.scrollTo({
         top: targetElement.offsetTop - 30,
+        behavior: 'smooth',
       });
     }
   };
@@ -121,7 +135,6 @@ function App() {
           <DrinkList
             sectionsRef={sectionsRef}
             navLinksRef={navLinksRef}
-            currentSection={currentSection}
             handleClick={handleClick}
           />
           <DrinkItemModal username={username} />

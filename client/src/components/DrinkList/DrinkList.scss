@@ -69,20 +69,23 @@
         width: 0;
       }
 
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          background: #ff6f00;
+          color: #ffffff;
+          transform: scale(1.05);
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      &.active {
         background: #ff6f00;
         color: #ffffff;
         transform: scale(1.05);
-        &::after {
-          width: 100%;
-        }
       }
-    }
-
-    .active-nav {
-      background: #ff6f00;
-      color: #ffffff;
-      transform: scale(1.05);
     }
   }
 }

@@ -11,7 +11,7 @@
    "options": {
       "temperature": {
          "title": "Temperatur seçimi",
-         "room": "Otaq temperaturlu",
+         "room": "Otaq",
          "cold": "Soyuq"
       },
       "syrup": {
