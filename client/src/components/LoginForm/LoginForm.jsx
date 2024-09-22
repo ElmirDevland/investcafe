@@ -12,7 +12,8 @@ const LoginForm = ({ onLogin }) => {
 
   const validateName = (name) => {
     const hasDigits = /\d/.test(name);
-    const hasMinimumLetters = name.replace(/[^a-zA-Z]/g, '').length >= 3;
+    const hasMinimumLetters =
+      name.replace(/[^a-zA-Zа-яА-ЯёЁ]/g, '').length >= 3;
 
     if (hasDigits) {
       return t('loginPage.hasDigits');
@@ -61,7 +62,7 @@ const LoginForm = ({ onLogin }) => {
               className="form-input"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              placeholder="Enter your first name"
+              placeholder={t('loginPage.fistnamePlaceholder')}
             />
           </div>
           <div className="form-group">
@@ -74,7 +75,7 @@ const LoginForm = ({ onLogin }) => {
               className="form-input"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              placeholder="Enter your last name"
+              placeholder={t('loginPage.lastnamePlaceholder')}
             />
           </div>
           <button type="submit" className="submit-button">

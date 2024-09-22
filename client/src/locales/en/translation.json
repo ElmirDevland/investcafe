@@ -3,10 +3,12 @@
       "welcome": "Welcome to InvestCafe.",
       "message": "Please fill in the information below to continue.",
       "hasDigits": "There should be no digits in the name.",
-      "minLetters": "The name must consist of at least 3 letters.",
+      "minLetters": "The first and last name must consist of at least 3 letters.",
       "firstName": "First Name",
       "lastName": "Last Name",
-      "enter": "Log In"
+      "enter": "Log In",
+      "fistnamePlaceholder": "Enter your first name",
+      "lastnamePlaceholder": "Enter your last name"
    },
    "options": {
       "temperature": {

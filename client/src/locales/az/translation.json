@@ -3,10 +3,12 @@
       "welcome": "InvestCafe-yə xoş gəlmisiniz.",
       "message": "Davam etmək üçün, lütfən, aşağıdaki məlumatları doldurun.",
       "hasDigits": "Adda rəqəmlər olmamalıdır.",
-      "minLetters": "Ad ən azı 3 hərfdən ibarət olmalıdır.",
+      "minLetters": "Ad və soyad ən azı 3 hərfdən ibarət olmalıdır.",
       "firstName": "Ad",
       "lastName": "Soyad",
-      "enter": "Daxil ol"
+      "enter": "Daxil ol",
+      "fistnamePlaceholder": "Adınızı daxil edin",
+      "lastnamePlaceholder": "Soyadınızı daxil edin"
    },
    "options": {
       "temperature": {

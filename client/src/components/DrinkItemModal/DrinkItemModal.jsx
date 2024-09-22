@@ -181,8 +181,8 @@ ${commentMessage}
     !statusOK && !statusError ? (
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {loading && <Spinner />}
+        <CloseBtn onClick={closeModal} />
         <div ref={modalWrapperRef} className="modal-wrapper">
-          <CloseBtn onClick={closeModal} />
           <div className="modal-main">
             <div className="modal-header">
               <div className="modal-image">
