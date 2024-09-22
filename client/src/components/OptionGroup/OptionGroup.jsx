@@ -7,10 +7,6 @@ const OptionGroup = () => {
   const { name, objKey, options } = modalItem;
 
   const isOptionVisible = useMemo(() => {
-    const temperatureOptions =
-      name === 'Sirab Still' ||
-      name === 'Sirab Sparkling' ||
-      name === 'Sarıkız';
     const espressoOptions = name === 'Espresso' || name === 'Эспрессо';
     const showMilkOptions = name === 'Americano' || name === 'Американо';
     const showSyrupOptions = ![
@@ -27,7 +23,11 @@ const OptionGroup = () => {
     ].includes(name);
 
     return (category) => {
-      if (category === 'temperature') return temperatureOptions;
+      if (
+        (objKey === 'water' || objKey === 'fruitjuices') &&
+        category === 'temperature'
+      )
+        return true;
       if (objKey === 'coffee' && category === 'milk') return showMilkOptions;
       if (
         (objKey === 'coffee' || objKey === 'icecoffee') &&

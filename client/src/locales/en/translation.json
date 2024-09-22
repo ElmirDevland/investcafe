@@ -51,7 +51,8 @@
    },
    "modal": {
       "add_to_cart": "Add to Cart",
-      "add_comment": "Add Comment"
+      "add_comment": "Add Comment",
+      "comment_text_area": "Leave a comment on your order"
    },
    "hero": {
       "title": "Enjoy the finest drinks with us!",
@@ -182,19 +183,49 @@
    },
    "fruitjuices_descriptions": {
       "orange_juice": {
-         "name": "Orange Juice"
+         "name": "Orange Juice",
+         "description": "Natural, vibrant, and rich in vitamin C, great for lifting your spirits!"
       },
       "apple_juice": {
-         "name": "Apple Juice"
+         "name": "Apple Juice",
+         "description": "Sweet and natural, a classic choice for any time!"
       },
       "cherry_juice": {
-         "name": "Cherry Juice"
+         "name": "Cherry Nectar",
+         "description": "Tart and sweet, ideal for quenching your thirst and delighting your taste buds!"
       },
       "peach_juice": {
-         "name": "Peach Juice"
+         "name": "Peach Nectar",
+         "description": "Sweet and refreshing, perfect for quenching your thirst!"
       },
       "multifruit_juice": {
-         "name": "Multifruit Juice"
+         "name": "Multifruit",
+         "description": "A delicious mix of fruits, rich in vitamins and energy!"
+      }
+   },
+   "cold_descriptions": {
+      "coca_cola_classic": {
+         "description": "A classic carbonated drink with a unique taste and caramel notes."
+      },
+      "coca_cola_zero": {
+         "description": "Without sugar and alcohol and with the same familiar taste."
+      },
+      "fanta": {
+         "description": "A bright fruity carbonated drink with a sweet and sour flavor."
+      },
+      "sprite": {
+         "description": "A refreshing lemon-lime drink that quenches your thirst perfectly."
+      }
+   },
+   "water_descriptions": {
+      "sparklingsirab": {
+         "description": "A refreshing carbonated drink with an exquisite taste."
+      },
+      "stillsirab": {
+         "description": "Pure non-carbonated water, ideal for quenching thirst."
+      },
+      "sarikiz": {
+         "description": "A traditional drink with a unique taste and lightness."
       }
    }
 }

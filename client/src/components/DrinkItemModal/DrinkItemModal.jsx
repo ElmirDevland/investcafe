@@ -16,6 +16,7 @@ import CloseBtn from '../Buttons/CloseBtn/CloseBtn';
 import QtyBtn from '../Buttons/QtyBtn/QtyBtn';
 import Spinner from '../Spinner/Spinner';
 import ResponseStatus from '../ResponseStatus/ResponseStatus';
+import CommentField from '../CommentField/CommentField';
 
 const DrinkItemModal = ({ username }) => {
   const {
@@ -32,6 +33,7 @@ const DrinkItemModal = ({ username }) => {
     statusReset,
     loading,
     setLoading,
+    disabledModal,
   } = useContext(ModalContext);
 
   const { quantity, quantityHandler } = useContext(QuantityContext);
@@ -40,17 +42,17 @@ const DrinkItemModal = ({ username }) => {
   const { t } = useTranslation();
 
   const modalRef = useRef(null);
+  const modalWrapperRef = useRef(null);
   const commentRef = useRef(null);
-
-  const [timerID, setTimerID] = useState(null);
+  const timerRef = useRef(null);
 
   useEffect(() => {
     return () => {
-      if (timerID) {
-        clearTimeout(timerID);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
       }
     };
-  }, [timerID]);
+  }, []);
 
   useEffect(() => {
     if (openModal && modalRef.current) {
@@ -61,16 +63,20 @@ const DrinkItemModal = ({ username }) => {
   useEffect(() => {
     if (showComments && commentRef.current) {
       commentRef.current.focus();
+      if (modalWrapperRef.current) {
+        modalWrapperRef.current.scrollTop =
+          modalWrapperRef.current.scrollHeight;
+      }
     }
   }, [showComments]);
 
   const handleKeyDown = useCallback(
     (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && !disabledModal) {
         closeModal();
       }
     },
-    [closeModal]
+    [closeModal, disabledModal]
   );
 
   const sendMessage = useCallback(() => {
@@ -84,7 +90,7 @@ const DrinkItemModal = ({ username }) => {
 
     const createMessage = ({ name, options, comment, objKey }) => {
       const optionsMessage = Object.entries(options)
-        .filter(([key, value]) => value !== 'none')
+        .filter(([, value]) => value !== 'none')
         .map(([key, value]) => formatOption(key, value))
         .join('\n\n');
 
@@ -105,7 +111,12 @@ ${commentMessage}
 
     const message = createMessage(modalItem);
 
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
     setLoading(true);
+
     axios
       .post(apiUrl, {
         chat_id: chatId,
@@ -119,16 +130,15 @@ ${commentMessage}
       })
       .finally(() => {
         setLoading(false);
-        const id = setTimeout(() => {
+        timerRef.current = setTimeout(() => {
           statusReset();
         }, 2000);
-        setTimerID(id);
       });
 
-    axios.post('http://localhost:5000/drinks', {
-      name: modalItem.name,
-      quantity: quantity,
-    });
+    // axios.post('http://localhost:5000/drinks', {
+    //   name: modalItem.name,
+    //   quantity: quantity,
+    // });
   }, [
     modalItem,
     firstName,
@@ -145,7 +155,7 @@ ${commentMessage}
   }, [sendMessage]);
 
   const handleClickOutside = (e) => {
-    if (e.target === modalRef.current) {
+    if (e.target === modalRef.current && !disabledModal) {
       closeModal();
     }
   };
@@ -171,45 +181,45 @@ ${commentMessage}
     !statusOK && !statusError ? (
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {loading && <Spinner />}
-        <CloseBtn onClick={closeModal} />
-        <div className="modal-main">
-          <div className="modal-header">
-            <div className="modal-image">
-              <img src={modalItem.img} alt="Drink" />
+        <div ref={modalWrapperRef} className="modal-wrapper">
+          <CloseBtn onClick={closeModal} />
+          <div className="modal-main">
+            <div className="modal-header">
+              <div className="modal-image">
+                <img src={modalItem.img} alt="Drink" />
+              </div>
+              <div className="modal-info">
+                <h2>{modalItem.name}</h2>
+                <p>{modalItem.descr}</p>
+              </div>
             </div>
-            <div className="modal-info">
-              <h2>{modalItem.name}</h2>
-              <p>{modalItem.descr}</p>
+            <div className="modal-body">
+              <OptionGroup />
+              {showComments && (
+                <CommentField
+                  commentRef={commentRef}
+                  comment={modalItem.comment}
+                  handleCommentChange={handleCommentChange}
+                />
+              )}
             </div>
           </div>
-          <div className="modal-body">
-            <OptionGroup />
-          </div>
-        </div>
-        <div className="modal-footer">
-          <QtyBtn
-            quantity={quantity}
-            minus={() => quantityHandler(-1)}
-            plus={() => quantityHandler(1)}
-          />
-          {showComments ? (
-            <textarea
-              ref={commentRef}
-              id="comment"
-              onChange={handleCommentChange}
-              placeholder={t('modal.add_comment')}
+          <div className="modal-footer">
+            <QtyBtn
+              quantity={quantity}
+              minus={() => quantityHandler(-1)}
+              plus={() => quantityHandler(1)}
             />
-          ) : (
             <button
               onClick={() => setShowComments(true)}
               className="comment-button"
             >
               {t('modal.add_comment')}
             </button>
-          )}
-          <button onClick={sendAndCloseModal} className="order-button">
-            {t('cart.order_btn')}
-          </button>
+            <button onClick={sendAndCloseModal} className="order-button">
+              {t('cart.order_btn')}
+            </button>
+          </div>
         </div>
       </div>
     ) : null;

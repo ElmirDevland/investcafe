@@ -53,7 +53,8 @@
    },
    "modal": {
       "add_to_cart": "Səbətə Əlavə Et",
-      "add_comment": "Şərh Əlavə Et"
+      "add_comment": "Şərh Əlavə Et",
+      "comment_text_area": "Sifarişinizə şərh yazın"
    },
    "hero": {
       "title": "Bizimlə ən yaxşı içkilərdən zövq alın!",
@@ -76,7 +77,7 @@
    "coffee_descriptions": {
       "americano": {
          "name": "Americano",
-         "description": "İnvestisiya strategiyalarımız kimi güclü və canlandırıcıdır. Firmamızla uğurun əsl dadını kəşf edin."
+         "description": "İnvestisiya strategiyalarımız kimi güclü və canlandırıcıdır. Şirkətimiz ilə uğurun əsl dadını kəşf edin."
       },
       "cappuccino": {
          "name": "Cappuccino",
@@ -84,7 +85,7 @@
       },
       "latte": {
          "name": "Latte",
-         "description": "Zərif və ipək kimi, hər investisiyada rahatlıq və inam. Şirkətimizlə sabitliyə üstünlük verin."
+         "description": "Zərif və ipək kimi, hər investisiyada rahatlıq və inam. Şirkətimiz ilə sabitliyə üstünlük verin."
       },
       "espresso": {
          "name": "Espresso",
@@ -92,7 +93,7 @@
       },
       "turkish_coffee": {
          "name": "Türk qəhvəsi",
-         "description": "Ənənəvi və bənzərsiz, fərdiləşdirilmiş investisiya yanaşmalarımız kimi. Şirkətimizlə yeni üfüqlər kəşf edin."
+         "description": "Ənənəvi və bənzərsiz, fərdiləşdirilmiş investisiya yanaşmalarımız kimi. Şirkətimiz ilə yeni üfüqlər kəşf edin."
       }
    },
    "icecoffee_descriptions": {
@@ -128,7 +129,7 @@
       },
       "citrus_tea": {
          "name": "Sitrus çayı",
-         "description": "Yenilikçi ideyalarımız kimi təravətləndirici və ruhlandırıcı. Şirkətimizlə parlaq maliyyə gələcəyinə hazırlaşın."
+         "description": "Yenilikçi ideyalarımız kimi təravətləndirici və ruhlandırıcı. Şirkətimiz ilə parlaq maliyyə gələcəyinə hazırlaşın."
       }
    },
    "icetea_descriptions": {
@@ -184,44 +185,56 @@
    },
    "fruitjuices_descriptions": {
       "orange_juice": {
-         "name": "Portağal Şirəsi"
+         "name": "Portağal Şirəsi",
+         "description": "Təbii, parlaq və C vitamini ilə zəngindir, əhval-ruhiyyəni mükəmməl qaldırır!"
       },
       "apple_juice": {
-         "name": "Alma Şirəsi"
+         "name": "Alma Şirəsi",
+         "description": "Vitaminlərlə zəngin olan təzə alma şirəsi."
       },
       "cherry_juice": {
-         "name": "Albalı Şirəsi"
+         "name": "Albalı Nektarı",
+         "description": "Şirin və turş, susuzluğu mükəmməl yatırır və dadı ilə sevindirir!"
       },
       "peach_juice": {
-         "name": "Şaftalı Şirəsi"
+         "name": "Şaftalı Nektarı",
+         "description": "Şirin və təravətləndirici, susuzluğu yatırmaq üçün idealdır!"
       },
       "multifruit_juice": {
-         "name": "Multimeyvə"
+         "name": "Multimeyvə",
+         "description": "Vitamin və enerji ilə zəngin dadlı meyvə qarışığı!"
       }
    },
    "cold_descriptions": {
       "coca_cola_classic": {
-         "name": "Coca-cola Classic"
+         "name": "Coca-cola Classic",
+         "description": "Klassik qazlı içki, unikal dadı və karamel notları ilə."
       },
       "coca_cola_zero": {
-         "name": "Coca-cola Zero"
+         "name": "Coca-cola Zero",
+         "description": "Sıfır şəkər və eyni tanış dadı olan sərinləşdirici içki."
       },
       "fanta": {
-         "name": "Fanta"
+         "name": "Fanta",
+         "description": "Şirin və turş dadı olan parlaq meyvəli qazlı içki."
       },
       "sprite": {
-         "name": "Sprite"
+         "name": "Sprite",
+         "description": "Susuzluğunuzu mükəmməl şəkildə yatıran təravətləndirici limon-lime içkisi."
       }
    },
    "water_descriptions": {
       "sparklingsirab": {
-         "name": "Sirab Sparkling"
+         "name": "Sirab Sparkling",
+         "description": "Zərif dadı olan təravətləndirici qazlı içki."
       },
       "stillsirab": {
-         "name": "Sirab Still"
+         "name": "Sirab Still",
+         "description": "Susuzluğu yatırmaq üçün ideal olan təmiz, qazsız su."
       },
       "sarikiz": {
-         "name": "Sarıkız"
+         "name": "Sarıkız",
+         "description": "Unikal dadı və yüngüllüyü olan ənənəvi içki."
       }
    }
 }

@@ -21,6 +21,7 @@ export const ModalProvider = ({ children }) => {
     },
   });
   const [openModal, setOpenModal] = useState(false);
+  const [disabledModal, setDisabledModal] = useState(false);
 
   const showModal = (drink) => {
     document.body.style.overflow = 'hidden';
@@ -109,6 +110,7 @@ export const ModalProvider = ({ children }) => {
     setLoading(false);
     setStatusError(false);
     setStatusOK(true);
+    setDisabledModal(true);
   };
 
   const statusReset = () => {
@@ -116,6 +118,7 @@ export const ModalProvider = ({ children }) => {
     setStatusError(null);
     setStatusOK(null);
     closeModal();
+    setDisabledModal(false);
   };
 
   return (
@@ -137,6 +140,7 @@ export const ModalProvider = ({ children }) => {
         statusOK,
         loading,
         setLoading,
+        disabledModal,
       }}
     >
       {children}

@@ -1,19 +1,50 @@
 .modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  ::-webkit-scrollbar-horizontal {
+    height: 8px;
+  }
 
   .modal-content {
-    overflow: hidden;
-    background-color: #fff;
-    margin: 5% auto;
-    border-radius: 8px;
-    width: 510px;
     position: relative;
+    width: 520px;
+    max-height: 80%;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    .modal-wrapper {
+      background-color: #fff;
+      position: relative;
+      max-height: 100%;
+      overflow-y: auto;
+    }
     @media (max-width: 426px) {
       width: 90%;
     }
@@ -99,16 +130,12 @@
 
     .modal-body {
       padding: 0 15px;
-      overflow: auto;
-      @media (max-width: 767px) {
-        max-height: 195px;
-      }
-      @media (min-width: 768px) {
-        max-height: 300px;
-      }
     }
 
     .modal-footer {
+      position: sticky;
+      left: 0;
+      bottom: 0;
       background-color: inherit;
       display: flex;
       justify-content: space-between;
