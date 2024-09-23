@@ -31,8 +31,10 @@
     font-size: 14px;
   }
 
-  &:hover {
-    background: #e65c00;
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      background: #e65c00;
+      transform: scale(1.05);
+    }
   }
 }

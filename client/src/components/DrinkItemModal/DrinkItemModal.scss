@@ -144,36 +144,6 @@
         padding: 5px;
         height: 50px;
       }
-
-      textarea {
-        border-radius: 4px;
-        border: 2px solid #ff6f00;
-        padding: 5px 2px;
-        line-height: normal;
-        @media (max-width: 500px) {
-          padding: 0;
-          padding-top: 3px;
-          width: 32%;
-        }
-        @media (min-width: 500px) and (max-width: 579px) {
-          padding: 0;
-          padding-top: 10px;
-          width: 35%;
-        }
-
-        @media (min-width: 579px) and (max-width: 768px) {
-          padding: 0;
-          padding-top: 10px;
-          width: 37%;
-        }
-        resize: none;
-        background-color: #ff6f00cb;
-        color: #ffffff;
-        text-align: center;
-        &::placeholder {
-          color: inherit;
-        }
-      }
     }
   }
 }
