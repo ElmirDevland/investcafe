@@ -2,33 +2,28 @@
   background: url('') no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
-  @media (max-width: 425px) {
-    padding: 40px 10px;
-  }
-  @media (min-width: 425px) and (max-width: 1023px) {
-    padding: 60px 0px;
-  }
-
-  @media (min-width: 1024px) and (max-width: 1439px) {
+  padding: 40px 20px;
+  @media (max-width: 768px) {
+    padding: 25px 20px;
   }
 
   .hero-content {
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto;
 
     h1 {
       @media (max-width: 425px) {
-        font-size: 32px;
+        font-size: 24px;
+        margin: 10px 0;
       }
-      @media (max-width: 767px) {
-        font-size: 34px;
+      @media (min-width: 425px) and (max-width: 767px) {
+        font-size: 28px;
       }
+
       font-size: 40px;
       font-weight: 700;
       color: #ff6f00;
-      margin: 40px 0;
-      line-height: 45px;
+      margin: 25px 0;
     }
     p {
       @media (max-width: 425px) {

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { apiToken, chatId } from '../../config';
 
 import { useTranslation } from 'react-i18next';
-import { useState, useRef, useEffect, useCallback, useContext } from 'react';
+import { useRef, useEffect, useCallback, useContext } from 'react';
 
 import './DrinkItemModal.scss';
 import '../../OrderBtn.scss';
@@ -38,7 +38,6 @@ const DrinkItemModal = ({ username }) => {
 
   const { quantity, quantityHandler } = useContext(QuantityContext);
 
-  const { firstName, lastName } = username;
   const { t } = useTranslation();
 
   const modalRef = useRef(null);
@@ -81,7 +80,6 @@ const DrinkItemModal = ({ username }) => {
 
   const sendMessage = useCallback(() => {
     const apiUrl = `https://api.telegram.org/bot${apiToken}/sendMessage`;
-    const username = firstName + ' ' + lastName;
 
     const formatOption = (key, value) =>
       `${key.charAt(0).toUpperCase() + key.slice(1)}: ${
@@ -97,7 +95,7 @@ const DrinkItemModal = ({ username }) => {
       const commentMessage = comment ? `Serh: ${comment}.` : '';
 
       return `
-Kimdən: ${username.trim()}.
+Kimdən: ${username.login}.
 
 ${objKey.charAt(0).toUpperCase() + objKey.slice(1)}: ${name}.
 
@@ -141,13 +139,12 @@ ${commentMessage}
     // });
   }, [
     modalItem,
-    firstName,
-    lastName,
     quantity,
     setLoading,
     onOkStatus,
     onErrorStatus,
     statusReset,
+    username.login,
   ]);
 
   const sendAndCloseModal = useCallback(() => {

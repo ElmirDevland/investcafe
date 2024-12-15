@@ -2,83 +2,64 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './LoginForm.scss';
+import Users from '../../../users.json';
 
 const LoginForm = ({ onLogin }) => {
   const { t } = useTranslation();
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [error, setError] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
-  const validateName = (name) => {
-    const hasDigits = /\d/.test(name);
-    const hasMinimumLetters =
-      name.replace(/[^a-zA-Zа-яА-ЯёЁ]/g, '').length >= 3;
-
-    if (hasDigits) {
-      return t('loginPage.hasDigits');
-    }
-
-    if (!hasMinimumLetters) {
-      return t('loginPage.minLetters');
-    }
-
-    return '';
-  };
+  const user = Users.find(
+    (user) => user.username === login && user.password === password
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const firstNameError = validateName(firstName);
-    const lastNameError = validateName(lastName);
-
-    if (firstNameError || lastNameError) {
-      setError(firstNameError || lastNameError);
-      return;
+    if (user) {
+      setError('');
+      localStorage.setItem('user', JSON.stringify({ login }));
+      onLogin();
     }
-
-    localStorage.setItem('user', JSON.stringify({ firstName, lastName }));
-    setError('');
-
-    onLogin();
+    if (!user) {
+      setError('Invalid username or password');
+    }
   };
 
   return (
     <div className="login-page">
       <div className="welcome-text">
         <h1>{t('loginPage.welcome')}</h1>
-        <p>{t('loginPage.message')}</p>
       </div>
       <div className="login-form-container">
         <form className="login-form" onSubmit={handleSubmit}>
           {error && <p className="error-message">{error}</p>}
           <div className="form-group">
-            <label htmlFor="first-name" className="form-label">
-              {t('loginPage.firstName')}
-            </label>
             <input
               type="text"
               id="first-name"
               className="form-input"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder={t('loginPage.fistnamePlaceholder')}
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+              placeholder="Login"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="last-name" className="form-label">
-              {t('loginPage.lastName')}
-            </label>
             <input
-              type="text"
+              type="password"
               id="last-name"
               className="form-input"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              placeholder={t('loginPage.lastnamePlaceholder')}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
             />
           </div>
-          <button type="submit" className="submit-button">
+          <button
+            disabled={!login || !password}
+            type="submit"
+            className="submit-button"
+          >
             {t('loginPage.enter')}
           </button>
         </form>

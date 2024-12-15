@@ -31,10 +31,7 @@ function App() {
     const tableNameFromUrl = urlParams.get('tableName');
 
     if (tableNameFromUrl) {
-      localStorage.setItem(
-        'user',
-        JSON.stringify({ firstName: tableNameFromUrl, lastName: '' })
-      );
+      localStorage.setItem('user', JSON.stringify({ login: tableNameFromUrl }));
       const user = JSON.parse(localStorage.getItem('user'));
 
       setUserName(user);

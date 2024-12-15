@@ -15,7 +15,7 @@ const defaultLanguage = supportedLanguages.includes(savedLanguage)
   ? savedLanguage
   : supportedLanguages.includes(userLanguage)
   ? userLanguage
-  : 'az';
+  : 'en';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -24,7 +24,7 @@ i18n.use(initReactI18next).init({
     ru: { translation: translationRU },
   },
   lng: defaultLanguage,
-  fallbackLng: 'az',
+  fallbackLng: 'en',
   interpolation: { escapeValue: false },
 });
 
