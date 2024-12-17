@@ -207,26 +207,33 @@
    },
    "cold_descriptions": {
       "coca_cola_classic": {
+         "name": "Coca-cola Classic",
          "description": "A classic carbonated drink with a unique taste and caramel notes."
       },
       "coca_cola_zero": {
+         "name": "Coca-cola Zero",
          "description": "Without sugar and alcohol and with the same familiar taste."
       },
       "fanta": {
+         "name": "Fanta",
          "description": "A bright fruity carbonated drink with a sweet and sour flavor."
       },
       "sprite": {
+         "name": "Sprite",
          "description": "A refreshing lemon-lime drink that quenches your thirst perfectly."
       }
    },
    "water_descriptions": {
       "sparklingsirab": {
+         "name": "Sirab Sparkling",
          "description": "A refreshing carbonated drink with an exquisite taste."
       },
       "stillsirab": {
+         "name": "Sirab Still",
          "description": "Pure non-carbonated water, ideal for quenching thirst."
       },
       "sarikiz": {
+         "name": "Sarıkız",
          "description": "A traditional drink with a unique taste and lightness."
       }
    }

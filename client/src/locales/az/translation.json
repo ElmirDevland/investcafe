@@ -209,33 +209,26 @@
    },
    "cold_descriptions": {
       "coca_cola_classic": {
-         "name": "Coca-cola Classic",
          "description": "Klassik qazlı içki, unikal dadı və karamel notları ilə."
       },
       "coca_cola_zero": {
-         "name": "Coca-cola Zero",
          "description": "Sıfır şəkər və eyni tanış dadı olan sərinləşdirici içki."
       },
       "fanta": {
-         "name": "Fanta",
          "description": "Şirin və turş dadı olan parlaq meyvəli qazlı içki."
       },
       "sprite": {
-         "name": "Sprite",
          "description": "Susuzluğunuzu mükəmməl şəkildə yatıran təravətləndirici limon-lime içkisi."
       }
    },
    "water_descriptions": {
       "sparklingsirab": {
-         "name": "Sirab Sparkling",
          "description": "Zərif dadı olan təravətləndirici qazlı içki."
       },
       "stillsirab": {
-         "name": "Sirab Still",
          "description": "Susuzluğu yatırmaq üçün ideal olan təmiz, qazsız su."
       },
       "sarikiz": {
-         "name": "Sarıkız",
          "description": "Unikal dadı və yüngüllüyü olan ənənəvi içki."
       }
    }
