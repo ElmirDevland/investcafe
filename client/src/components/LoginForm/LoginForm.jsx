@@ -13,6 +13,8 @@ const LoginForm = ({ onLogin }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
+  axios.defaults.withCredentials = true;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);

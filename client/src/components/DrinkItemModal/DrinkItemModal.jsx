@@ -80,7 +80,7 @@ const DrinkItemModal = ({ username }) => {
   // https://api.telegram.org/bot${apiToken}
 
   const sendMessage = useCallback(() => {
-    const apiUrl = `https://investcafe-backend.vercel.app/sendMessage`;
+    const apiUrl = 'https://investcafe-backend.vercel.app/sendMessage';
 
     const formatOption = (key, value) =>
       `${key.charAt(0).toUpperCase() + key.slice(1)}: ${
