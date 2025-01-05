@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './LoginForm.scss';
-import Users from '../../../users.json';
+import users from '../../../users';
 
 const LoginForm = ({ onLogin }) => {
   const { t } = useTranslation();
@@ -10,10 +10,13 @@ const LoginForm = ({ onLogin }) => {
   const [error, setError] = useState('');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [user, setUser] = useState({});
 
-  const user = Users.find(
-    (user) => user.username === login && user.password === password
-  );
+  useEffect(() => {
+    setUser(
+      users.find((user) => user.login === login && user.password === password)
+    );
+  }, [login, password]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

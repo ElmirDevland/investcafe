@@ -6,6 +6,9 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT;
 
+const apiToken = '6731291835:AAFbVDxAIb5jxwtuLlUTq1pxkqpjCLlXJvM';
+const chatID = '-1002099681374';
+
 app.use(express.json());
 app.use(cors());
 
@@ -25,6 +28,30 @@ const drinkSchema = new mongoose.Schema({
 const Drink = mongoose.model('Drink', drinkSchema);
 
 // Добавление напитка
+app.post('/sendMessage', async (req, res) => {
+  try {
+    const { chat_id, text } = req.body;
+
+    const response = await fetch(
+      `https://api.telegram.org/bot${apiToken}/sendMessage`,
+      {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({ chat_id, text }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.ok) {
+      res.status(200).send('Message sent successfully');
+    } else {
+      res.status(400).send('Failed to send message');
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
 app.post('/drinks', async (req, res) => {
   try {
     const { name, quantity } = req.body;

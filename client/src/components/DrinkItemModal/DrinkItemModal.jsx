@@ -77,9 +77,10 @@ const DrinkItemModal = ({ username }) => {
     },
     [closeModal, disabledModal]
   );
+  // https://api.telegram.org/bot${apiToken}
 
   const sendMessage = useCallback(() => {
-    const apiUrl = `https://api.telegram.org/bot${apiToken}/sendMessage`;
+    const apiUrl = `http://localhost:5000/sendMessage`;
 
     const formatOption = (key, value) =>
       `${key.charAt(0).toUpperCase() + key.slice(1)}: ${
@@ -133,10 +134,10 @@ ${commentMessage}
         }, 2000);
       });
 
-    // axios.post('http://localhost:5000/drinks', {
-    //   name: modalItem.name,
-    //   quantity: quantity,
-    // });
+    axios.post('http://localhost:5000/drinks', {
+      name: modalItem.name,
+      quantity: quantity,
+    });
   }, [
     modalItem,
     quantity,
