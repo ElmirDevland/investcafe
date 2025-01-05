@@ -42,6 +42,12 @@ const drinkSchema = new mongoose.Schema({
 const Users = usersDb.model('Users', usersSchema);
 const Drink = drinksDb.model('Drink', drinkSchema);
 
+app.get('/', (req, res) => {
+  res.json('Hello');
+  console.log(res.status);
+  console.log(req);
+});
+
 app.post('/login', async (req, res) => {
   const { login, password } = req.body;
 
