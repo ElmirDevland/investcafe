@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './LoginForm.scss';
-import users from '../../../users';
+import users from '../../../public/users';
 
 const LoginForm = ({ onLogin }) => {
   const { t } = useTranslation();
