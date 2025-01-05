@@ -1,32 +1,40 @@
-import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './LoginForm.scss';
-import users from './users';
 
 const LoginForm = ({ onLogin }) => {
   const { t } = useTranslation();
 
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const [user, setUser] = useState({});
 
-  useEffect(() => {
-    setUser(
-      users.find((user) => user.login === login && user.password === password)
-    );
-  }, [login, password]);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (user) {
-      setError('');
-      localStorage.setItem('user', JSON.stringify({ login }));
-      onLogin();
-    }
-    if (!user) {
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await axios.post(
+        'https://investcafe-backend.vercel.app/login',
+        {
+          login,
+          password,
+        }
+      );
+
+      if (response.data.success) {
+        localStorage.setItem('user', JSON.stringify({ login }));
+        onLogin();
+      }
+    } catch (error) {
       setError('Invalid username or password');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -59,11 +67,11 @@ const LoginForm = ({ onLogin }) => {
             />
           </div>
           <button
-            disabled={!login || !password}
-            type="submit"
+            disabled={!login || !password || loading}
             className="submit-button"
+            type="submit"
           >
-            {t('loginPage.enter')}
+            {loading ? 'Loading...' : t('loginPage.enter')}
           </button>
         </form>
       </div>

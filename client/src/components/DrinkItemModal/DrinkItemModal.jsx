@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { apiToken, chatId } from '../../config';
+import { chatId } from '../../config';
 
 import { useTranslation } from 'react-i18next';
 import { useRef, useEffect, useCallback, useContext } from 'react';

@@ -6,27 +6,64 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT;
 
-const apiToken = '6731291835:AAFbVDxAIb5jxwtuLlUTq1pxkqpjCLlXJvM';
+const apiToken = process.env.TG_API_TOKEN;
 
 app.use(express.json());
-app.use(cors());
 
-// Подключение к MongoDB
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Failed to connect to MongoDB', err));
 
-// Определение схемы и модели
+const usersDb = mongoose.connection.useDb('Users');
+const drinksDb = mongoose.connection.useDb('DrinksLogger');
+
+const usersSchema = new mongoose.Schema({
+  login: { type: String, required: true },
+  password: { type: String, required: true },
+});
+
 const drinkSchema = new mongoose.Schema({
   name: String,
   quantity: Number,
   date: { type: Date, default: Date.now },
 });
 
-const Drink = mongoose.model('Drink', drinkSchema);
+const Users = usersDb.model('Users', usersSchema);
+const Drink = drinksDb.model('Drink', drinkSchema);
 
-// Добавление напитка
+app.post('/login', async (req, res) => {
+  const { login, password } = req.body;
+
+  try {
+    const user = await Users.findOne({ login });
+
+    if (!user) {
+      return res
+        .status(400)
+        .json({ success: false, message: 'User not found' });
+    }
+
+    if (user.password === password) {
+      return res.json({ success: true, message: 'Login successful' });
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: 'Invalid password' });
+    }
+  } catch (error) {
+    return res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
 app.post('/sendMessage', async (req, res) => {
   try {
     const { chat_id, text } = req.body;
@@ -51,6 +88,7 @@ app.post('/sendMessage', async (req, res) => {
     res.status(500).send(err.message);
   }
 });
+
 app.post('/drinks', async (req, res) => {
   try {
     const { name, quantity } = req.body;
@@ -62,7 +100,6 @@ app.post('/drinks', async (req, res) => {
   }
 });
 
-// Получение списка напитков с фильтром
 app.get('/drinks', async (req, res) => {
   try {
     const filter = req.query.filter;
@@ -126,15 +163,15 @@ app.get('/drinks/summary', async (req, res) => {
     }
 
     const summary = await Drink.aggregate([
-      { $match: matchStage }, // Применяем фильтр
+      { $match: matchStage },
       {
         $group: {
-          _id: '$name', // Группируем по названию напитка
-          totalQuantity: { $sum: '$quantity' }, // Суммируем количество напитков
+          _id: '$name',
+          totalQuantity: { $sum: '$quantity' },
         },
       },
       {
-        $sort: { totalQuantity: -1 }, // Сортируем по убыванию общего количества
+        $sort: { totalQuantity: -1 },
       },
     ]);
     res.status(200).json(summary);
