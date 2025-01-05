@@ -44,6 +44,7 @@ const Drink = drinksDb.model('Drink', drinkSchema);
 
 app.get('/', (req, res) => {
   res.json('Hello');
+  res.send('Server is working');
   console.log(res.status);
   console.log(req);
 });
