@@ -80,7 +80,7 @@ const DrinkItemModal = ({ username }) => {
   // https://api.telegram.org/bot${apiToken}
 
   const sendMessage = useCallback(() => {
-    const apiUrl = `http://localhost:5000/sendMessage`;
+    const apiUrl = `https://investcafe-backend.vercel.app/sendMessage`;
 
     const formatOption = (key, value) =>
       `${key.charAt(0).toUpperCase() + key.slice(1)}: ${
@@ -134,7 +134,7 @@ ${commentMessage}
         }, 2000);
       });
 
-    axios.post('http://localhost:5000/drinks', {
+    axios.post('https://investcafe-backend.vercel.app/drinks', {
       name: modalItem.name,
       quantity: quantity,
     });

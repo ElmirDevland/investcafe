@@ -7,7 +7,6 @@ const app = express();
 const port = process.env.PORT;
 
 const apiToken = '6731291835:AAFbVDxAIb5jxwtuLlUTq1pxkqpjCLlXJvM';
-const chatID = '-1002099681374';
 
 app.use(express.json());
 app.use(cors());
