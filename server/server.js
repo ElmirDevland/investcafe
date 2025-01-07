@@ -10,15 +10,7 @@ const apiToken = process.env.TG_API_TOKEN;
 
 app.use(express.json());
 
-const corsOptions = {
-  origin: 'https://investcafe.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URL)
