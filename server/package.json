@@ -18,6 +18,6 @@
     "mongoose": "^8.6.2"
   },
   "engines": {
-    "node": "v21.3.0"
+    "node": "22.x"
   }
 }
