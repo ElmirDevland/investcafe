@@ -55,22 +55,24 @@ app.post('/login', async (req, res) => {
   try {
     const user = await Users.findOne({ login });
 
-    if (!user) {
-      return res
-        .status(400)
-        .json({ success: false, message: 'User not found' });
-    }
+  //   if (!user) {
+  //     return res
+  //       .status(400)
+  //       .json({ success: false, message: 'User not found' });
+  //   }
 
-    if (user.password === password) {
-      return res.json({ success: true, message: 'Login successful' });
-    } else {
-      return res
-        .status(400)
-        .json({ success: false, message: 'Invalid password' });
-    }
-  } catch (error) {
-    return res.status(500).json({ success: false, message: 'Server error' });
-  }
+  //   if (user.password === password) {
+  //     return res.json({ success: true, message: 'Login successful' });
+  //   } else {
+  //     return res
+  //       .status(400)
+  //       .json({ success: false, message: 'Invalid password' });
+  //   }
+  // } catch (error) {
+  //   return res.status(500).json({ success: false, message: 'Server error' });
+  // }
+  res.json(login);
+
 });
 
 app.post('/sendMessage', async (req, res) => {
