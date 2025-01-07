@@ -11,7 +11,7 @@ const apiToken = process.env.TG_API_TOKEN;
 app.use(express.json());
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://investcafe.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
